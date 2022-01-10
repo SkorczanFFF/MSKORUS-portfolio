@@ -1,0 +1,96 @@
+@import "../../assets/colorPalette";
+@import "../../assets/gradientAnimation";
+
+.container-footer {
+    min-height: 400px;
+    width: 100%;
+    background: $primaryBlue;
+}
+.smaller-container {
+    //background: tomato;
+    width: 70%;
+    height: 100%;
+    padding: 2em;
+    margin: auto;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, $orangerColor, $raspberryColor);
+    background-size: 200% 400%;
+
+    -webkit-animation: gradientAnimationX 7s ease infinite;
+    -moz-animation: gradientAnimationX 7s ease infinite;
+    animation: gradientAnimationX 7s ease infinite;
+    margin-top: 1.5em;
+}
+
+.footer-item-container {
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 2rem;
+    position: relative;
+    margin: 2em;
+}
+.footer-item {
+    height: auto;
+    width: auto;
+    
+    .footer-item-icon {
+        color: $raspberryColor;
+        font-size: 150px;
+        display: block;
+        margin: auto;
+    }
+    .footer-item-description {
+        color: $whiteColor;
+        letter-spacing: .5em;
+        font-size: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+}
+
+
+
+.end-line {
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(270deg, $orangerColor, $raspberryColor);
+    background-size: 200% 400%;
+    -webkit-animation: gradientAnimationX 7s ease infinite;
+    -moz-animation: gradientAnimationX 7s ease infinite;
+    animation: gradientAnimationX 7s ease infinite;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h2 {
+    margin: auto;
+    color: $whiteColor;
+    font-size: 2em;
+    margin-top: .5em;
+}
+
+p {
+    color: $primaryBlue;
+    margin: auto;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+@media (max-width: 1200px) {
+    .smaller-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .smaller-container {
+        width: 95%;
+    }
+    .footer-item-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

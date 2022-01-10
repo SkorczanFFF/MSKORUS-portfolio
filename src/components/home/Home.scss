@@ -1,0 +1,20 @@
+@import '../../assets/colorPalette';
+
+.container-home {
+  height: 97vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.three-renderer {
+  background: $primaryBlue;
+  width: 100%;
+}
+
+.text-home {
+  background: violet;
+  height: 100%;
+  justify-content: center;
+}
