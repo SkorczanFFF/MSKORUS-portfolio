@@ -33,8 +33,8 @@ function Home() {
                   <Bloom kernelSize={1} luminanceThreshold={3} luminanceSmoothing={0.4} intensity={1.6} />
                   <DepthOfField focusDistance={-1} focalLength={0.5} bokehScale={.5} height={1000} />
                 <ScbrollButton position={[-1.2, 0, 0]} />
-                  <Box position={[-1.2, 0, 0]} />
-                */}
+              */}
+              <Box position={[-1.2, 0, 0]} />
                 <Box position={[1.2, 0, 0]} />
                   <MS />
                   <Stars

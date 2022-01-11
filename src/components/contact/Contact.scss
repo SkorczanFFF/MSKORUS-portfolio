@@ -1,5 +1,7 @@
-@import "../../assets/colorPalette";
-@import "../../assets/gradientAnimation";
+@import "../sassStyles/colorPalette";
+@import "../sassStyles/sectionHeading";
+@import "../sassStyles/gradientAnimation";
+@import "../sassStyles/arrows";
 
 .container-contact {
     height: 100%;
@@ -7,39 +9,24 @@
     background: $whiteColor;
 }
 
-.contact-heading {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-left: 60px solid transparent;
-    padding: 2em;
-    right: 0;
-    margin: auto;
-    
-    .left-heading {
-        font-size: 2rem;
-        color: $primaryBlue;
-        text-transform: uppercase;
-        letter-spacing: 15px;
-        position: absolute;
-        left: -40px;
-        top: 280px;
-        margin: 0;
-        transform: rotate(270deg);
-        transform-origin: 0 0;
-        font-weight: bolder;
-    }
+.contact-envelope {
+  font-size: 4em;
+  display: block;
+  margin: auto;
+  color: $primaryBlue;
+  margin-bottom: .7em;
+}
 
-    .portfolio-description {
-        color: $primaryBlue;
-        line-height: 150%;
-        margin: 1em;
+.section-heading {
+    .left-heading {
+        color: $primaryBlue; 
+        top: 280px;
     }
 }
 
 .contact-content {
     max-width: 70%;
-    height: 400px;
+    height: 100%;
     left: -30px;
     padding: 3rem;
     margin: 0 auto;
@@ -50,3 +37,95 @@
     -moz-animation: gradientAnimationX 15s ease infinite;
     animation: gradientAnimationX 15s ease infinite;
 }
+
+button {
+    overflow: visible;
+    color: $primaryBlue;
+    //margin: auto;
+  }
+  
+  button, input, select, textarea {
+    color: $primaryBlue;
+    font: inherit;
+    margin: 0;
+  }
+  
+  input {
+    line-height: normal;
+  }
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  input[type='text'], [type='email'], select, textarea {
+      background: none;
+    border: none;
+      border-bottom: solid 2px $primaryBlue;
+      color: $whiteColor;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0 0 0.875em 0;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s;
+  }
+  
+  input[type='text']:focus, [type='email']:focus, textarea:focus {
+      outline: none;
+      padding: 0 0 0.875em 0;
+  }
+  
+  .contact-name {
+      float: left;
+      width: 45%;
+  }
+
+  .email {
+    float: right;
+    width: 45%;
+  }
+  
+  .subject {
+    width: 100%;
+  }
+  
+  .message {
+    float: none;
+  }
+
+  textarea {
+      line-height: 150%;
+      min-height: 200px;
+      resize: none;
+        width: 100%;
+  }
+
+  ::placeholder {
+      color: white;
+      font-weight: bold;
+  }
+  
+  .submit-button {
+    background: $primaryBlue;
+    border: solid 2px $whiteColor;
+    color: $orangeColor;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    padding: 1em;
+    transition: all 0.3s;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .submit-button:hover {
+    background: $orangeColor;
+    color: $primaryBlue;
+    border: solid 2px $primaryBlue;
+    width: 100%;
+  }
+  
+  

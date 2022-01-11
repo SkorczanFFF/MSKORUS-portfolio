@@ -1,32 +1,34 @@
 import React from 'react';
+import { BiEnvelopeOpen } from 'react-icons/bi';
 import './Contact.scss';
 
 export default function Contact() {
 
   return (
     <section className="container-contact">
-        <div class="contact-heading">
-          <h3 className="left-heading">KONTAKT</h3>
+        <div class="section-heading">
+          <h3 className="left-heading blue">KONTAKT</h3>
             <div className="contact-content">
-              <form className="form">
-                <div className="nameInput">
-                    <label for="firstName">First name</label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        className="firstName"
-                        tabIndex="1"
-                    />
-                    <label for="lastName">Last name</label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        className="lastName"
-                        tabIndex="2"
-                    />
+              <BiEnvelopeOpen className="contact-envelope" />
+                <form action="#" method="post" id="contact_form">
+                  <div className="contact-name">
+                    <input type="text" placeholder="Imię" name="name" id="name-input" required />
+                  </div>
+                  <div className="contact-email">
+                    <input type="email" placeholder="Adres e-mail" name="email" id="email-input" required />
+                  </div>
+                  <div className="contact-subject">
+                    <input type="text" placeholder="Temat wiadomości" name="subject" id="telephone-input" required />
+                  </div>
+                  
+                  <div className="message">
+                    <textarea name="message" placeholder="Masz jakiś problem?" id="message-input" cols="30" rows="5" required></textarea>
+                  </div>
+                  <div className="submit">
+                    <input type="submit" value="WYŚLIJ WIADOMOŚĆ" className="submit-button" />
                   </div>
                 </form>
-              </div>
+          </div>
         </div>
     </section> 
   );

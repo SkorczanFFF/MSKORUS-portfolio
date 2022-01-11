@@ -1,11 +1,13 @@
-@import "../../assets/colorPalette";
-@import "../../assets/gradientAnimation";
+@import "../sassStyles/colorPalette";
+@import "../sassStyles/gradientAnimation";
+@import "../sassStyles/arrows";
 
 .container-footer {
     min-height: 400px;
     width: 100%;
     background: $primaryBlue;
 }
+
 .smaller-container {
     //background: tomato;
     width: 70%;
@@ -19,7 +21,6 @@
     height: 2px;
     background: linear-gradient(270deg, $orangerColor, $raspberryColor);
     background-size: 200% 400%;
-
     -webkit-animation: gradientAnimationX 7s ease infinite;
     -moz-animation: gradientAnimationX 7s ease infinite;
     animation: gradientAnimationX 7s ease infinite;
@@ -33,13 +34,14 @@
     position: relative;
     margin: 2em;
 }
+
 .footer-item {
     height: auto;
     width: auto;
     
     .footer-item-icon {
         color: $raspberryColor;
-        font-size: 150px;
+        font-size: 120px;
         display: block;
         margin: auto;
     }
@@ -47,12 +49,24 @@
         color: $whiteColor;
         letter-spacing: .5em;
         font-size: 1em;
+        font-weight: bold;
         padding: 1em;
+    }
+    .footer-link {
+        text-decoration: none;
+        color: $whiteColor;
+        letter-spacing: .1em;
         text-align: center;
     }
 }
 
+.left {
+    float: left;
+}
 
+.right {
+    float: right;
+}
 
 .end-line {
     width: 100%;
@@ -66,11 +80,10 @@
     padding: 10px 0;
 }
 
-h2 {
+.footer-heading {
     margin: auto;
     color: $whiteColor;
     font-size: 2em;
-    margin-top: .5em;
 }
 
 p {
@@ -78,6 +91,12 @@ p {
     margin: auto;
     text-align: center;
     font-size: 1.2em;
+}
+
+@media (min-width: 1200px) {
+    .footer-item-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 1200px) {

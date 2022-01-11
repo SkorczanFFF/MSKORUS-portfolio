@@ -1,0 +1,24 @@
+.section-heading {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-left: 60px solid transparent;
+    padding: 2em;
+    right: 0;
+    margin: auto;
+    
+    .left-heading {
+        font-size: 2rem;
+        color: $primaryBlue;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        position: absolute;
+        left: -40px;
+        top: 280px;
+        margin: 0;
+        transform: rotate(270deg);
+        transform-origin: 0 0;
+        font-weight: bolder;
+        
+    }
+}

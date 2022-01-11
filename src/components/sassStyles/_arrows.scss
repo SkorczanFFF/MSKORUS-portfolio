@@ -1,0 +1,27 @@
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 37.5px 0 37.5px;
+    margin: auto;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 37.5px 25px 37.5px;
+    margin: auto;
+}
+
+.white {
+    border-color: $whiteColor transparent transparent transparent;  
+}
+
+.blue {
+    border-color: $primaryBlue transparent transparent transparent; 
+}
+
+.orange {
+    border-color: $orangerColor transparent transparent transparent; 
+}

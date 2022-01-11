@@ -1,10 +1,18 @@
 import React from 'react';
 import './About.scss';
 
-const About = () => {
+export default function About() {
   return (
-    <div className="container-about" id="about">
-    </div>  
+    <section>
+      <div className="container-about">
+        <div className="arrow-down blue" />
+          <div class="about-heading">
+            <h3 className="left-heading">O MNIE</h3>
+              <div className="about-content">
+            
+              </div>
+            </div>
+        </div>
+    </section> 
   );
 }
-export default About;
