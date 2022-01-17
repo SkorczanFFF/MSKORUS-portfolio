@@ -1,5 +1,6 @@
 @import "../sassStyles/colorPalette";
 @import "../sassStyles/gradientAnimation";
+@import "../sassStyles/arrows";
 
 .container-portfolio {
     height: 100%;
@@ -26,7 +27,7 @@
         letter-spacing: 15px;
         position: absolute;
         left: -40px;
-        top: 300px;
+        top: 290px;
         margin: 0;
         transform: rotate(270deg);
         transform-origin: 0 0;
@@ -58,10 +59,15 @@
     height: 100%;
     width: 100%;
     border: 10px solid $raspberryColor;
+    
     img {
         width: 100%;
         height: auto;
-        background: $raspberryColor;
+        background: linear-gradient(270deg, $orangerColor, $raspberryColor);
+        background-size: 200% 400%;
+        -webkit-animation: gradientAnimationX 15s ease infinite;
+        -moz-animation: gradientAnimationX 15s ease infinite;
+        animation: gradientAnimationX 15s ease infinite;
         display: block;
     }
     .item-desctiption {
@@ -76,8 +82,11 @@
         text-align: center;
         top: -100px;
         line-height: 1.6;
-        
     }
+}
+
+.arrow-down {
+    border-color: $primaryBlue transparent transparent transparent;  
 }
 
 //magic section
@@ -98,13 +107,15 @@
     .portfolio-content { 
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 1rem; 
-        margin: 0;
         width: 100%;
     }
 
     .portfolio-description {
         color: $whiteColor;
-        margin: 0 auto 3em;
         width: 70%;
+    }
+
+    .portfolio-item {
+        width: 100%;
     }
 }

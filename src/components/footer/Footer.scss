@@ -35,6 +35,10 @@
     margin: 2em;
 }
 
+.footer-item-container:nth-child(even) {
+    border: 10px solid tomato;
+}
+
 .footer-item {
     height: auto;
     width: auto;
@@ -42,22 +46,25 @@
     .footer-item-icon {
         color: $raspberryColor;
         font-size: 120px;
-        display: block;
         margin: auto;
     }
     .footer-item-description {
         color: $whiteColor;
-        letter-spacing: .5em;
-        font-size: 1em;
-        font-weight: bold;
-        padding: 1em;
+        letter-spacing: .3em;
+        font-size: 1.1em;
+        //font-weight: bold;
+        //padding: 1em;
+        list-style-type: none;
     }
     .footer-link {
         text-decoration: none;
         color: $whiteColor;
         letter-spacing: .1em;
-        text-align: center;
     }
+}
+
+.footer-item-icon:nth-child(even) {
+    color: $orangerColor;
 }
 
 .left {
@@ -66,6 +73,14 @@
 
 .right {
     float: right;
+    
+}
+
+.footer-item-name {
+    letter-spacing: .3em;
+    font-size: 1.3em;
+    color: white;
+
 }
 
 .end-line {

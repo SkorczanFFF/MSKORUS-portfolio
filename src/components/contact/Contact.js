@@ -6,6 +6,7 @@ export default function Contact() {
 
   return (
     <section className="container-contact">
+      <div className="arrow-down" />
         <div class="section-heading">
           <h3 className="left-heading blue">KONTAKT</h3>
             <div className="contact-content">
@@ -20,8 +21,7 @@ export default function Contact() {
                   <div className="contact-subject">
                     <input type="text" placeholder="Temat wiadomości" name="subject" id="telephone-input" required />
                   </div>
-                  
-                  <div className="message">
+                  <div className="contact-message">
                     <textarea name="message" placeholder="Masz jakiś problem?" id="message-input" cols="30" rows="5" required></textarea>
                   </div>
                   <div className="submit">

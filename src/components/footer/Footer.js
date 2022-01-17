@@ -15,12 +15,15 @@ export default function Footer() {
                 <div className="footer-item-container">
                     <div className="footer-item">
                         <IoIosPaperPlane className="footer-item-icon left" />
-                        <div className="footer-item-description">KONTAKT</div>
-                        <a className="footer-link" href = "mailto: abc@example.com">SKOREK11@GMAIL.COM</a>
+                        <h3 className="footer-item-name">KONTAKT</h3>
+                        <p className="footer-item-description">SKOREK11@GMAIL.COM
+                        </p>
                     </div>
                     <div className="footer-item">
                         <BsFillFileEarmarkPersonFill className="footer-item-icon right" />
-                        <div className="footer-item-description left">CV</div>
+                        <h3 className="footer-item-name">CV</h3>
+                        <p className="footer-item-description right">Polski (PL)</p>
+                        <p className="footer-item-description left">English (ENG)</p>                        
                     </div>
                 </div>
             </div>

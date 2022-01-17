@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { HashLink as Link } from "react-router-hash-link";
-import { GiTreeBranch } from 'react-icons/gi';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.scss';
 
@@ -26,7 +25,6 @@ export default function Navbar() {
             <div className={navbar ? 'navbar active' : 'navbar'}>
                 <div className="navbar-container container">
                     <Link smooth to="#home" className="navbar-logo" onClick={closeMobileMenu}>
-                        <GiTreeBranch className="navbar-icon" />
                         MSKORUS
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>

@@ -14,8 +14,8 @@ export default function App() {
               <Navbar /> 
               <Home />
               <About />
-              <Portfolio /> 
               <Technologies />
+              <Portfolio />
               <Contact />
               <Footer />
           </>

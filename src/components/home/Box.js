@@ -6,7 +6,6 @@ export default function Box(props) {
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
-  const orangeColor = 
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => (mesh.current.rotation.x += 0.01))
   // Return view, these are regular three.js elements expressed in JSX
