@@ -3,49 +3,74 @@
 @import "../sassStyles/arrows";
 
 .container-technos {
-    height: 500px;
+    height: 100%;
     width: 100%;
     background: $whiteColor;
-}
-
-.arrow-down {
-    border-color: $primaryBlue transparent transparent transparent;  
-}
-
-.technos-heading {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-left: 60px solid transparent;
-    padding: 2em;
-    right: 0;
-    margin: auto;
+    padding: 5em 0em 2em 0em;
     
-    .left-heading {
-        font-size: 2rem;
-        color: $primaryBlue;
-        text-transform: uppercase;
-        letter-spacing: 15px;
-        position: absolute;
-        left: -40px;
-        top: 280px;
-        margin: 0;
-        transform: rotate(270deg);
-        transform-origin: 0 0;
-        font-weight: bolder;
-    }
 }
 
 .technos-content {
-    max-width: 70%;
-    height: 400px;
-    left: -30px;
-    padding: 3rem;
-    margin: 0 auto;
-    position: relative;
-    background: linear-gradient(270deg, $orangerColor, $raspberryColor);
-    background-size: 200% 400%;
-    -webkit-animation: gradientAnimationX 15s ease infinite;
-    -moz-animation: gradientAnimationX 15s ease infinite;
-    animation: gradientAnimationX 15s ease infinite;
+    width: 80%;
+    margin: 2em auto 0 auto;
+    padding-bottom: 5em;
+    text-align: center;
+    transition: .5s;
+}
+
+.technos-heading {
+    text-align: center;
+    color: $primaryBlue;
+    font-size: 2em;
+    font-weight: bold;
+    transition: .5s;
+    margin-top: 1.5em;
+    letter-spacing: .1em;
+}
+
+.technos-icon {
+	color: $primaryBlue;
+	font-size: 6.5rem;
+	margin: .3em .5em .3em .5em;
+    transition: .5s;
+}
+
+.technos-icon:hover {
+    color: $orangeColor;
+    filter: drop-shadow( 1px 1px 1px $raspberryColor);
+}
+
+@media (max-width:800px) {
+    .technos-content {
+        width: 93%;
+    }
+    .technos-icon {
+        font-size: 6rem;
+        margin: .3em .4em .3em .4em;
+    }
+}
+
+@media (max-width:600px) {
+    .technos-content {
+        width: 92%;
+    }
+    .technos-icon {
+        margin: .3em .4em .3em .4em;
+    }
+    .technos-heading {
+        font-size: 1.7em;
+        
+    }
+}
+
+@media (max-width:400px) {
+    .technos-content {
+        width: 100%;
+    }
+    .technos-icon {
+        margin: .2em .3em .2em .3em;
+    }
+    .technos-heading {
+        font-size: 1.5em;
+    }
 }

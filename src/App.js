@@ -9,15 +9,15 @@ import Footer from './components/footer/Footer';
 import './App.scss';
 
 export default function App() {
-        return(
-          <>
-              <Navbar /> 
-              <Home />
-              <About />
-              <Technologies />
-              <Portfolio />
-              <Contact />
-              <Footer />
-          </>
-        );
+  return(
+    <>
+      <Navbar /> 
+      <Home />
+      <About />
+      <Technologies />
+      <Portfolio />
+      <Contact />
+      <Footer />
+    </>
+  );
 }

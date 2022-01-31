@@ -1,85 +1,69 @@
-import React, { Suspense, forwardRef } from "react";
-import { Canvas, useFrame, useThree} from '@react-three/fiber';
-import * as THREE from 'three';
-import { EffectComposer, DepthOfField, Bloom, Noise, GodRays } from '@react-three/postprocessing';
-import { OrbitControls, CameraShake, Stars, Environment, Html, useProgress, Cloud } from '@react-three/drei';
-import { BlendFunction, Resizer, KernelSize }  from 'postprocessing';
-import './Home.scss';
-//import Loader from './indegredients/Loader';
-import Box from "./Box";
-import MS from "./indegredients/MS";
-import Planet from "./indegredients/Planet";
-//import msFull from '../../assets/models/full.gltf';
+import React, { Suspense, useEffect, useState } from "react"
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { useInView } from 'react-intersection-observer'
+import * as THREE from 'three'
+import { EffectComposer } from '@react-three/postprocessing'
+import { OrbitControls, CameraShake, Stars, Environment, Html, useProgress } from '@react-three/drei'
+import './Home.scss'
+import DesktopBackground from './indegredients/DesktopBackground'
+import DesktopScene from './indegredients/DesktopScene'
+import MobileBackground from './indegredients/MobileBackground'
+import MobileScene from './indegredients/MobileScene'
+import ScrollButton from '../atoms/ScrollButton/ScrollButton'
 
-const orangeColor = 0x8a2d1f;
-
+const DisableRender = () => useFrame(() => null, 1000)
+function ViewportWidth() {
+  const [viewportSize, setViewportSize] = useState([window.innerWidth]);
+  useEffect(() => {
+    const handleResize = () => setViewportSize([ window.innerWidth]);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  return viewportSize;
+}
 function Rig() {
   const { camera, mouse } = useThree();
   const vec = new THREE.Vector3();
     return useFrame(() => camera.position.lerp(vec.set(mouse.x * 1, mouse.y * 0.5, camera.position.z), 0.02));
 }
-
 function Loader() {
-  const { progress } = useProgress()
-  return <Html center >{progress} % loaded</Html>
+  const { progress } = useProgress();
+  return (
+    <Html center>
+      <b style={{ color: "#801834", fontSize: "3em", margin: "auto", borderBottom: "2em" }}>{Math.round(progress)}%</b>
+    </Html>
+  )
 }
-
-const Sphere = forwardRef(function Sphere(props, forwardRef) {
-  useFrame(({ clock }) => {});
-  return (    
-    <mesh ref={forwardRef} position={[1, 0, -15]} castShadow >      
-      <sphereGeometry attach="geometry" args={[8, 26, 26]} />      
-      <meshStandardMaterial attach="material" color={orangeColor} transparent roughness={.7} metalness={0.5} />
-    </mesh>  
-  );
-});
-
 export default function Home() { 
+  const [width] = ViewportWidth();
+  const { ref, inView } = useInView();
     return (
       <>
-      <div className="container-home" id="home">
-        <div className="three-renderer" >
-          <Canvas colorManagement gl={{ antialias: true }}>
-            <Suspense fallback={<Loader/>}>
-              <OrbitControls enableZoom={true} enablePan={true} enableRotate={false} />
-              <ambientLight intensity={1} />
-                <EffectComposer>
-
-                  <Noise opacity={.05} />
-                  {/*
-                  <Bloom kernelSize={1} luminanceThreshold={3} luminanceSmoothing={0.4} intensity={1.6} />
-                  
-                  <ScbrollButton position={[-1.2, 0, 0]} />
-              */}
-              <Cloud position={[0,0,-30]}
-  opacity={.2}
-  speed={0.2} // Rotation speed
-  width={40} // Width of the full cloud
-  depth={1.5} // Z-dir depth
-  segments={50} // Number of particles
-  color={orangeColor}
-/>
-              <Planet />
-              <MS />
-    
-              <Environment preset="city" />
-                  <Stars
-                    radius={50} // Radius of the inner sphere (default=100)
-                    depth={300} // Depth of area where stars should fit (default=50)
-                    count={1000} // Amount of stars (default=5000)
-                    factor={5} // Size factor (default=4)
-                    saturation={.1} // Saturation 0-1 (default=0)
-                    fade // Faded dots (default=false)
-                  />
-                  <spotLight intensity={.5} position={[600, -700, 700]} />
-                  <spotLight intensity={.5} position={[-600, 700, -700]} />
-                </EffectComposer>
-              <CameraShake yawFrequency={0.02} pitchFrequency={0.03} rollFrequency={0.02} />
-              <Rig />
-            </Suspense>
-          </Canvas>
-        </div>
-      </div>
+        <section className="container-home" id="home">
+          <div ref={ref} className="three-renderer" >
+            <Canvas colorManagement gl={{antialias: false}}>
+            {!inView && <DisableRender />}
+              <Suspense fallback={<Loader/>}>
+                <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
+                <CameraShake yawFrequency={.01} pitchFrequency={.03} rollFrequency={.02} />
+                <Rig />
+                <spotLight intensity={.5} position={[600, -700, 700]} />
+                <spotLight intensity={.5} position={[-600, 700, -700]} />
+                  <EffectComposer>
+                    {width < 1100 
+                      ? <><MobileBackground /><MobileScene /></> 
+                      : <><DesktopBackground /><DesktopScene /></>
+                    }
+                    <Environment preset="city" />
+                    <Stars radius={.2} depth={150} count={1000} factor={3} fade />
+                  </EffectComposer>
+              </Suspense>
+            </Canvas>
+            <ScrollButton />
+          </div>
+        </section>
       </>
     )
 }

@@ -6,23 +6,22 @@ import './Navbar.scss';
 
 export default function Navbar() {
     const [click, setClick] = useState(false);
-    const [navbar, setNavbar] = useState(false);
+    const [navbar, setNavbar] = useState(true);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
     const changeBackground = () => {
-        if(window.scrollY >= 20) {
-            setNavbar(true);
-        } else {
-            setNavbar(false);
-        }
+        const viewportHeight = window.innerHeight;
+            if(window.pageYOffset >= viewportHeight) {
+                setNavbar(true);
+            } else setNavbar(false);    
     }
     window.addEventListener('scroll', changeBackground);
 
     return (
         <>
-            <div className={navbar ? 'navbar active' : 'navbar'}>
+            <nav className={navbar ? 'navbar active' : 'navbar'}>
                 <div className="navbar-container container">
                     <Link smooth to="#home" className="navbar-logo" onClick={closeMobileMenu}>
                         MSKORUS
@@ -42,13 +41,13 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link smooth to="#portfolio" className='nav-links' onClick={closeMobileMenu}>
-                                Portfolio
+                            <Link smooth to="#technologies" className='nav-links' onClick={closeMobileMenu}>
+                                Technologie
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link smooth to="#technologies" className='nav-links' onClick={closeMobileMenu}>
-                                Technologie
+                            <Link smooth to="#portfolio" className='nav-links' onClick={closeMobileMenu}>
+                                Portfolio
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -58,7 +57,7 @@ export default function Navbar() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </nav>
         </>
     )
 }

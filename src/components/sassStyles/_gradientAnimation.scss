@@ -1,3 +1,19 @@
+.gradient {
+    background: linear-gradient(270deg, $orangerColor, $raspberryColor);
+    background-size: 200% 400%;
+    -webkit-animation: gradientAnimationX 7s ease infinite;
+    -moz-animation: gradientAnimationX 7s ease infinite;
+    animation: gradientAnimationX 7s ease infinite;
+}
+
+.gradient-slow {
+    background: linear-gradient(270deg, $orangerColor, $raspberryColor);
+    background-size: 200% 400%;
+    -webkit-animation: gradientAnimationX 7s ease infinite;
+    -moz-animation: gradientAnimationX 7s ease infinite;
+    animation: gradientAnimationX 7s ease infinite;
+}
+
 @-webkit-keyframes gradientAnimationX {
     0%{background-position:0% 51%}
     50%{background-position:100% 50%}
