@@ -3,147 +3,145 @@
 @import "../sassStyles/arrows";
 
 .container-footer {
-    min-height: 300px;
-    width: 100%;
-    background: $primaryBlue;
+  min-height: 300px;
+  width: 100%;
+  background: $primaryBlue;
 }
 
 .smaller-container {
-    width: 70%;
-    height: 100%;
-    padding: 1em;
-    margin: auto;
-    
+  width: 70%;
+  height: 100%;
+  padding: 1em;
+  margin: auto;
 }
 
 .footer-heading {
-    color: $whiteColor;
-    font-size: 2em;
-    transition: all 0.5s;
+  color: $whiteColor;
+  font-size: 2em;
+  transition: all 0.5s;
 }
 
 .line {
-    width: 100%;
-    height: 2px;
-    margin-top: 1.5em;
+  width: 100%;
+  height: 2px;
+  margin-top: 1.5em;
 }
 
 .footer-item-container {
-    display: grid;
-    grid-gap: 1rem;
-    margin: 2em auto 2em auto; 
+  display: grid;
+  grid-gap: 1rem;
+  margin: 2em auto 2em auto;
 }
 
 .footer-item {
-    align-items: center;
-    margin-top: 2em;
-}
-
-.footer-item:nth-child(even) {
+  align-items: center;
+  margin-top: 2em;
+  &:nth-child(even) {
     text-align: right;
+  }
 }
 
 .footer-item-icon {
-    color: $raspberryColor;
-    font-size: 100px;
-    margin: auto;
-    float: left;
-    transition: 1s;
-    margin-top: -20px;
-}
-.footer-item-icon:nth-child(even) {
+  color: $raspberryColor;
+  font-size: 100px;
+  margin: auto;
+  float: left;
+  transition: 1s ease-in-out;
+  margin-top: -20px;
+  &:nth-child(even) {
     bottom: -1em;
-}
-
-.footer-item-icon:hover {
+  }
+  &:hover {
     color: $orangerColor;
     scale: 1.1;
+  }
 }
 
 .footer-item-name {
-    letter-spacing: .2em;
-    font-size: 1.3em;
-    color: white;
+  letter-spacing: 0.2em;
+  font-size: 1.3em;
+  color: white;
 }
 
 .footer-item-description {
-    color: $whiteColor;
-    letter-spacing: .07em;
-    font-size: 1.1em;
-    margin: .1em
-    
+  color: $whiteColor;
+  letter-spacing: 0.07em;
+  font-size: 1.1em;
+  margin: 0.1em;
 }
 .footer-link {
-    text-decoration: none;
-    color: $whiteColor;
-    letter-spacing: .1em;
+  text-decoration: none;
+  color: $whiteColor;
+  letter-spacing: 0.1em;
 }
 
 .end-line {
-    width: 100%;
-    height: 40px;
-    text-align: center;
-    padding: 10px 0;
-    color: $primaryBlue;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  padding: 10px 0;
+  color: $primaryBlue;
 }
 
 .right {
-    float: right;
+  float: right;
 }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
-    color: $whiteColor;
+  text-decoration: none;
+  cursor: pointer;
+  color: $whiteColor;
 }
 
 @media (min-width: 1200px) {
-    .footer-item-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .footer-item-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 1200px) {
-    .smaller-container {
-        width: 80%;
-    }
+  .smaller-container {
+    width: 80%;
+  }
 }
 
 @media (max-width: 600px) {
-    .smaller-container {
-        width: 99%;
-    }
-    .footer-item-container {
-        grid-template-columns: repeat(1, 2fr);
-    }
+  .smaller-container {
+    width: 99%;
+  }
 
-    .footer-heading {
-        font-size: 1.85em;
-        margin: .5em 0 .5em 0;
-    }
+  .footer-item-container {
+    grid-template-columns: repeat(1, 2fr);
+  }
 
-    .footer-item {
-        display: flex;
-        flex-direction: column;text-align: none !important;
-    }
-    
-    .footer-item-name {
-        letter-spacing: .2em;
-        font-size: 1.2em;
-        color: white;
-        margin-top: 1em;
-    }
-    
-    .footer-item-description {
-        color: $whiteColor;
-        letter-spacing: .07em;
-        font-size: 1em;
-        margin: .1em
-    }
-    .footer-link {
-        text-decoration: none;
-        color: $whiteColor;
-        letter-spacing: .1em;
-    }
+  .footer-heading {
+    font-size: 1.85em;
+    margin: 0.5em 0 0.5em 0;
+  }
+
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    text-align: none !important;
+  }
+
+  .footer-item-name {
+    letter-spacing: 0.2em;
+    font-size: 1.2em;
+    color: white;
+    margin-top: 1em;
+  }
+
+  .footer-item-description {
+    color: $whiteColor;
+    letter-spacing: 0.07em;
+    font-size: 1em;
+    margin: 0.1em;
+  }
+
+  .footer-link {
+    text-decoration: none;
+    color: $whiteColor;
+    letter-spacing: 0.1em;
+  }
 }
-

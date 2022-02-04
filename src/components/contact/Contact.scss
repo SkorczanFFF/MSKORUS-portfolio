@@ -3,8 +3,8 @@
 @import "../sassStyles/arrows";
 
 .container-contact {
-    height: 100%;
-    background: $whiteColor;
+  height: 100%;
+  background: $whiteColor;
 }
 
 .contact-envelope {
@@ -12,7 +12,7 @@
   display: block;
   margin: auto;
   color: $primaryBlue;
-  margin-bottom: .7em;
+  margin-bottom: 0.7em;
   transition: all 0.5s;
 }
 
@@ -24,7 +24,6 @@
   border-right: 60px solid transparent;
   padding: 2em 0 2em 0;
   right: 0;
-  
   .left-heading {
     font-size: 2rem;
     color: $primaryBlue;
@@ -37,88 +36,80 @@
     transform: rotate(270deg);
     transform-origin: 0 0;
     font-weight: bolder;
-    transition: .5s;
-      
+    transition: 0.5s;
   }
 }
 
 .contact-content {
-    height: 100%;
-    padding: 2rem;
-    margin: 0 auto 1em;
-    width: 600px;
+  height: 100%;
+  padding: 2rem;
+  margin: 0 auto 1em;
+  width: 600px;
 }
 
-button {
-    overflow: visible;
-    color: $primaryBlue;
-    //margin: auto;
-  }
-  
-  button, input, select, textarea {
-    color: $primaryBlue;
-    font: inherit;
-    margin: 0;
-  }
-  
-  input {
-    line-height: normal;
-  }
-  
-  textarea {
-    overflow: auto;
-  }
-  
-  input[type='text'], [type='email'], select, textarea {
-    background: none;
-    border: none;
-    border-bottom: solid 2px $primaryBlue;
-    color: $whiteColor;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: 0em 0 1.875em 0;
-    padding: 0 0 0.875em 0;
-    text-transform: uppercase;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.3s;
-  }
-  
-  input[type='text']:focus, [type='email']:focus, textarea:focus {
-      outline: none;
-      padding: 0 0 0.875em 0;
-  }
-  
-.contact-name {
-  float: left;
-  width: 45%;
- }
-
-.contact-email {
-  float: right;
-  width: 45%;
+button,
+input,
+select,
+textarea {
+  color: $primaryBlue;
+  font: inherit;
+  margin: 0;
 }
-  
-  .contact-subject {
-    width: 100%;
-  }
-  
-  .contact-message {
-    float: none;
-  }
 
 textarea {
-    line-height: 150%;
-    min-height: 200px;
-    resize: none;
-    width: 100%;
+  line-height: 150%;
+  min-height: 200px;
+  resize: none;
+  width: 100%;
+}
+
+input[type="text"],
+[type="email"],
+select,
+textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 2px $primaryBlue;
+  color: $whiteColor;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  padding: 0 0 0.875em 0;
 }
 
 ::placeholder {
   color: white;
   font-weight: bold;
 }
-  
+
+.contact-name {
+  float: left;
+  width: 45%;
+}
+
+.contact-email {
+  float: right;
+  width: 45%;
+}
+
+.contact-subject {
+  width: 100%;
+}
+
+.contact-message {
+  float: none;
+}
+
 .submit-button {
   width: 100%;
   margin: auto;
@@ -130,32 +121,31 @@ textarea {
   font-weight: bold;
   letter-spacing: 0.1em;
   transition: all 0.5s;
+  &:hover {
+    background: $whiteColor;
+    color: $primaryBlue;
+    width: 100%;
+  }
 }
-  
-.submit-button:hover {
-  background: $whiteColor;
-  color: $primaryBlue;
-  width: 100%;
-}
-  
+
 @media (max-width: 1100px) {
   .contact-heading {
-      border-left: 0px;
-      border-right: 0px;
-      .left-heading {
-          font-size: 2rem;
-          color: $primaryBlue;
-          left: 30px;
-          top: 50px;
-          transform: rotate(0deg);
-      }
+    border-left: 0px;
+    border-right: 0px;
+    .left-heading {
+      font-size: 2rem;
+      color: $primaryBlue;
+      left: 30px;
+      top: 50px;
+      transform: rotate(0deg);
+    }
   }
   .contact-content {
     margin-top: 8em;
     margin-bottom: 5em;
   }
   .contact-envelope {
-    margin-top: .4em;
+    margin-top: 0.4em;
     font-size: 8em;
   }
 }
@@ -168,32 +158,36 @@ textarea {
     -moz-animation: gradientAnimationX 15s ease infinite;
     animation: gradientAnimationX 15s ease infinite;
     margin: 3em auto 1.5em auto;
-      .left-heading {
-          font-size: 1.5rem;
-          color: $primaryBlue;
-          letter-spacing: .3em;
-      }
+    .left-heading {
+      font-size: 1.5rem;
+      color: $primaryBlue;
+      letter-spacing: 0.3em;
+    }
   }
+
   .contact-content {
     width: 100%;
     background: transparent;
     margin-top: -2em;
     margin-bottom: -2em;
   }
+
   .contact-envelope {
-    //margin-top: -.5em;
     font-size: 7em;
     color: $primaryBlue;
     margin-top: 1em;
   }
+
   .contact-name {
     float: none;
     width: 100%;
   }
+
   .contact-email {
     float: none;
     width: 100%;
   }
+
   .bottom-mobile {
     background: $whiteColor;
     width: 100%;

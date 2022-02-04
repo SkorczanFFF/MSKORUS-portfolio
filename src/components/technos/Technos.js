@@ -6,14 +6,11 @@ import { IoLogoSass, IoLogoReact, IoLogoJavascript } from 'react-icons/io5'
 import { SiThreedotjs, SiBlender, SiAutodesk, SiAdobephotoshop, SiVisualstudiocode, SiMongodb, SiBootstrap, SiJava, SiFirebase, SiNpm, SiMysql } from 'react-icons/si' 
 import './Technos.scss'
 export default function Technos() {
-  const [show, setShow] = useState(false)
   return (
     <section className="container-technos" id="technologies">
-      <Flip top opposite cascade>
-      <h3 className="technos-heading">CO I JAK</h3>
-      </Flip>
-      <Slide bottom opposite cascade>
-        <div className="technos-content">
+      <Flip top opposite cascade><h3 className="technos-heading">FAQ: A W CZYM?</h3></Flip>
+        <Slide bottom opposite cascade>
+          <div className="technos-content">
             <AiFillHtml5 className='technos-icon' />
             <IoLogoSass className='technos-icon' />
             <IoLogoReact className='technos-icon' />
@@ -30,7 +27,7 @@ export default function Technos() {
             <SiJava className='technos-icon' />
             <SiNpm className='technos-icon' />
             <SiMysql className='technos-icon' />
-        </div>
+          </div>
         </Slide>
     </section> 
   );

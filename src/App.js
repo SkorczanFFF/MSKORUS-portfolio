@@ -12,11 +12,11 @@ export default function App() {
   return(
     <>
       <Navbar /> 
-      <Home />
-      <About />
-      <Technologies />
-      <Portfolio />
-      <Contact />
+        <Home />
+        <About />
+        <Technologies />
+        <Portfolio />
+        <Contact />
       <Footer />
     </>
   );

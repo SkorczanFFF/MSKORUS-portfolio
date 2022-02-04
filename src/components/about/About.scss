@@ -2,94 +2,131 @@
 @import "../sassStyles/gradientAnimation";
 
 .about-heading {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    padding: 10em 0 2em 0;
-    right: 0;
-    background: $whiteColor;
-    
-    .left-heading {
-        font-size: 2rem;
-        color: $primaryBlue;
-        text-transform: uppercase;
-        letter-spacing: 15px;
-        position: absolute;
-        left: -40px;
-        top: 330px;
-        margin: 0;
-        transform: rotate(270deg);
-        transform-origin: 0 0;
-        font-weight: bolder;
-        transition: .5s;
-    }
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  padding: 10em 0 2em 0;
+  right: 0;
+  background: $whiteColor;
+  .left-heading {
+    font-size: 2rem;
+    color: $primaryBlue;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    position: absolute;
+    left: -40px;
+    top: 290px;
+    margin: 0;
+    transform: rotate(270deg);
+    transform-origin: 0 0;
+    font-weight: bolder;
+    transition: 0.5s;
+  }
 }
 
 .about-content {
-    margin: 0 0 0 5em;
+  margin: 0 0 0 0;
+}
+
+.styling-rhombus {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background: linear-gradient(270deg, $orangeColor, $raspberryColor);
+  background-size: 100% 200%;
+  width: 200px;
+  height: 200px;
 }
 
 .greeting {
-    display: table; /* keep the background color wrapped tight */
-    margin: 0 auto 0 0; /* keep the table centered */
-    padding:.3em;
-    font-size:2.5em;
-    background: linear-gradient(270deg, $orangerColor, $raspberryColor);
-    background-size: 200% 400%;
-    color:$whiteColor;
+  display: table;
+  margin: 0;
+  padding: 0.3em;
+  font-size: 2.5em;
+  background: linear-gradient(270deg, $orangeColor, $raspberryColor);
+  background-size: 100% 200%;
+  color: $whiteColor;
+  &:last-child {
+    margin-top: 1em;
+    transition: 0.5s ease-in-out;
+  }
 }
 
-.content-desc {
-    font-size: 1.5em;
-    padding: 1em;
-    margin-top: 5em;
-    color: $primaryBlue;
-
-    .align-left {
-        text-align: left;
-    }
-    .align-right {
-        text-align: right;
-    }
+.greeting-container {
+  width: 60%;
+  margin: auto;
+  &:nth-child(even) {
+    transition: 0.5s ease-in;
+    transform: perspective(600px) rotateY(-5deg);
+  }
+  &:nth-child(odd) {
+    transition: 0.5s ease-in;
+    transform: perspective(600px) rotateY(5deg);
+  }
 }
 
-
-img.portfolio-img {
-    width: 200px;
-    margin: auto;
-    margin: 4em 2em;
-    height: auto;
+h3.about-desc {
+  font-size: 1.25em;
+  color: $whiteColor;
+  padding: 1em;
+  background: $primaryBlue;
+  margin: 8em auto 0 auto;
+  width: 45%;
+  letter-spacing: 0.1em;
 }
 
-
-.left {
-    float: left;
+p.about-details {
+  color: $primaryBlue;
+  font-size: 1.15em;
+  margin: 5em auto 0 auto;
+  text-align: center;
+  line-height: 1.5;
+  width: 80%;
 }
-
-
 
 @media (max-width: 1100px) {
-    .about-heading {
-        border-left: 0px;
-        border-right: 0px;
-        .left-heading {
-            font-size: 2rem;
-            color: $primaryBlue;
-            left: 30px;
-            top: 70px;
-            transform: rotate(0deg);
-        }
+  .about-heading {
+    border-left: 0px;
+    border-right: 0px;
+    .left-heading {
+      font-size: 2rem;
+      color: $primaryBlue;
+      left: 30px;
+      top: 70px;
+      transform: rotate(0deg);
     }
+  }
+  .content-desc {
+    font-size: 1em;
+  }
 }
 
 @media (max-width: 600px) {
-    .about-heading {
-        .left-heading {
-            font-size: 1.5rem;
-            color: $primaryBlue;
-            letter-spacing: .3em;
-        }
+  .about-heading {
+    .left-heading {
+      font-size: 1.5rem;
+      color: $primaryBlue;
+      letter-spacing: 0.3em;
     }
+  }
+  p.about-desc {
+    width: 70%;
+  }
+}
+
+@media (max-width: 420px) {
+  p.about-desc {
+    width: 100%;
+  }
+  .greeting-container {
+    &:nth-child(odd) {
+      width: 90%;
+    }
+    &:nth-child(even) {
+      width: 90%;
+    }
+  }
+  p.about-details {
+    width: 90%;
+  }
 }

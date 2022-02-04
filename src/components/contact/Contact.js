@@ -41,7 +41,7 @@ export default function Contact() {
                       <input type="text" placeholder="Temat wiadomości" name="subject" required />
                     </div>
                     <div className="contact-message">
-                      <textarea name="message" placeholder="Masz jakiś problem?" cols="30" rows="5" required></textarea>
+                      <textarea name="message" placeholder="Treść wiadomości" cols="30" rows="5" required></textarea>
                     </div>
                     <div className="submit">
                       <input type="submit" value="WYŚLIJ WIADOMOŚĆ" className="submit-button" onClick={notify} />

@@ -4,12 +4,12 @@ import { useInView } from 'react-intersection-observer'
 import * as THREE from 'three'
 import { EffectComposer } from '@react-three/postprocessing'
 import { OrbitControls, CameraShake, Stars, Environment, Html, useProgress } from '@react-three/drei'
-import './Home.scss'
 import DesktopBackground from './indegredients/DesktopBackground'
 import DesktopScene from './indegredients/DesktopScene'
 import MobileBackground from './indegredients/MobileBackground'
 import MobileScene from './indegredients/MobileScene'
 import ScrollButton from '../atoms/ScrollButton/ScrollButton'
+import './Home.scss'
 
 const DisableRender = () => useFrame(() => null, 1000)
 function ViewportWidth() {
